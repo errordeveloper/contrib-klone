@@ -69,9 +69,7 @@ mime_map_t mime_map[] = {
     { "jpeg",       "image/jpeg",                       0 }, 
     { "jpg",        "image/jpeg",                       0 }, 
     { "json",       "application/json",                 1 },
-    { "kson",       "application/json",                 1 },
     { "js",         "application/x-javascript",         1 }, 
-    { "ks",         "application/x-javascript",         1 },
     { "kar",        "audio/midi",                       1 }, 
     { "latex",      "application/x-latex",              1 }, 
     { "lha",        "application/octet-stream",         0 }, 
@@ -172,5 +170,9 @@ mime_map_t mime_map[] = {
     { "xwd",        "image/x-xwindowdump",              1 }, 
     { "xyz",        "chemical/x-xyz",                   1 }, 
     { "zip",        "application/zip",                  0 },
+#ifdef CUSTOM_MIME_ENTRIES
+    CUSTOM_MIME_ENTRIES
+#else
+#endif
     { 0,            0,                                  0 }
 };
