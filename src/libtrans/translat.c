@@ -304,6 +304,8 @@ int translate_is_a_script(const char *filename)
     static const char *script_ext[] = { 
         ".klone", ".kl1", ".klc", 
         ".klx",  /* C++ page */
+        ".kson", /* C/JSON */
+        ".ks", /* C/JS */
         NULL 
     };
     const char **ext;
