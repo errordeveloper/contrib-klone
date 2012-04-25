@@ -3,6 +3,10 @@
 #include <klone/ses_prv.h>
 #include <klone/rsfilter.h>
 
+#ifndef DEFAULT_CONTENT_TYPE
+#define DEFAULT_CONTENT_TYPE "text/html"
+#endif
+
 const char *dypage_get_param(dypage_args_t *args, const char *key)
 {
     int i;
@@ -51,7 +55,7 @@ int dypage_serve(dypage_args_t *args)
     ss = args->ss;
 
     /* set some default values */
-    dbg_err_if(response_set_content_type(rs, "text/html"));
+    dbg_err_if(response_set_content_type(rs, DEFAULT_CONTENT_TYPE));
 
     /* by default disable caching */
     response_disable_caching(rs);
